@@ -12,11 +12,11 @@ public class Questao3Array {
             notas[i] = sc.nextInt();
         }
 
-        for (int media = 0; media < notas.length; media++) {
+        for (int i = 0; i < notas.length; i++) {
             soma += notas[i];
         }
 
-        double media = soma / numeros.length;
+        double media = soma / notas.length;
         System.out.println("Média: " + media);
     }
 }
