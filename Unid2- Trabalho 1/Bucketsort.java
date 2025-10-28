@@ -11,16 +11,16 @@ public class Bucketsort {
         // caso o vetor esteja vazio ou tenha apenas 1 elemento, não há nada para ordenar
         if (n <= 0) return;
 
-        // 1) criação dos "baldes" (listas que armazenam elementos por faixa de valores)
+        // criação dos "baldes" (listas que armazenam elementos por faixa de valores)
         // cada bucket será uma lista que vai armazenar números com valores próximos
         ArrayList<Float>[] buckets = new ArrayList[n];
 
-        // 2) inicializa cada bucket (vazio no início)
+        // inicializa cada bucket (vazio no início)
         for (int i = 0; i < n; i++) {
             buckets[i] = new ArrayList<>();
         }
 
-        // 3) distribui os elementos do vetor original entre os baldes
+        // distribui os elementos do vetor original entre os baldes
         // a fórmula usada (array[i] * n) supõe que os números estão entre 0 e 1.
         // para outros intervalos, seria necessário normalizar.
         for (int i = 0; i < n; i++) {
@@ -29,12 +29,12 @@ public class Bucketsort {
             buckets[bucketIndex].add(array[i]);
         }
 
-        // 4) ordena individualmente cada balde (usando Collections.sort)
+        // ordena individualmente cada balde (usando Collections.sort)
         for (int i = 0; i < n; i++) {
             Collections.sort(buckets[i]);
         }
 
-        // 5) concatena os baldes de volta no vetor original (em ordem)
+        // concatena os baldes de volta no vetor original (em ordem)
         int index = 0;
         for (int i = 0; i < n; i++) {
             for (float value : buckets[i]) {
