@@ -11,7 +11,7 @@ public class Bucketsort {
         // caso o vetor esteja vazio ou tenha apenas 1 elemento, não há nada para ordenar
         if (n <= 0) return;
 
-        // criação dos "baldes" (listas que armazenam elementos por faixa de valores)
+        // criação dos "baldes" (listas que armazenam elementos por INTERVALO de valores)
         // cada bucket é uma lista que vai armazenar números com valores próximos
         ArrayList<Float>[] buckets = new ArrayList[n];
 
