@@ -12,7 +12,7 @@ public class Bucketsort {
         if (n <= 0) return;
 
         // criação dos "baldes" (listas que armazenam elementos por faixa de valores)
-        // cada bucket será uma lista que vai armazenar números com valores próximos
+        // cada bucket é uma lista que vai armazenar números com valores próximos
         ArrayList<Float>[] buckets = new ArrayList[n];
 
         // inicializa cada bucket (vazio no início)
