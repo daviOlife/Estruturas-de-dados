@@ -24,8 +24,10 @@ public class Bucketsort {
         // a fórmula usada (array[i] * n) supõe que os números estão entre 0 e 1.
         // para outros intervalos, seria necessário normalizar.
         for (int i = 0; i < n; i++) {
-            int bucketIndex = (int) (array[i] * n); // define o índice do balde
-            if (bucketIndex >= n) bucketIndex = n - 1; // evita "ArrayIndexOutOfBounds"
+            // define o índice do balde
+            int bucketIndex = (int) (array[i] * n); 
+            // evita "ArrayIndexOutOfBounds"
+            if (bucketIndex >= n) bucketIndex = n - 1; 
             buckets[bucketIndex].add(array[i]);
         }
 
@@ -48,7 +50,8 @@ public class Bucketsort {
         Random random = new Random();
         float[] array = new float[size];
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextFloat(); // gera valores entre 0 e 1
+            // gera valores entre 0 e 1
+            array[i] = random.nextFloat(); 
         }
         return array;
     }
@@ -58,7 +61,8 @@ public class Bucketsort {
         for (int i = 0; i < Math.min(array.length, limit); i++) {
             System.out.printf("%.4f ", array[i]);
         }
-        if (array.length > limit) System.out.print("..."); // evita prints longos
+        // evita prints longos
+        if (array.length > limit) System.out.print("..."); 
         System.out.println();
     }
 
@@ -75,7 +79,8 @@ public class Bucketsort {
             float[] array = generateRandomArray(size);
 
             System.out.println("Antes da ordenação:");
-            printArray(array, 10); // mostra os primeiros 10 valores
+            // mostra os primeiros 10 valores
+            printArray(array, 10); 
 
             // aplica o Bucket Sort
             bucketSort(array);
