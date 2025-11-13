@@ -7,7 +7,6 @@ public class BucketSortTesteTempo {
 
     public static void main(String[] args) {
 
-        // tamanhos de vetores para teste
         int[] sizes = {10, 100, 1000, 10000, 100000};
         int repetitions = 10;
 
@@ -15,13 +14,11 @@ public class BucketSortTesteTempo {
 
         Random rnd = new Random(12345);
 
-        // aquecimento da JVM (para resultados mais estáveis)
         for (int w = 0; w < 5; w++) {
             float[] warmup = Unidade2.Bucketsort.generateRandomArray(1000);
             Unidade2.Bucketsort.bucketSort(warmup);
         }
 
-        // execução principal
         for (int size : sizes) {
 
             System.out.println("Tamanho do vetor: " + size);
@@ -30,7 +27,7 @@ public class BucketSortTesteTempo {
             long totalTime = 0;
 
             for (int i = 0; i < repetitions; i++) {
-                // cria uma cópia para não reordenar o mesmo vetor
+
                 float[] testArray = new float[baseArray.length];
                 System.arraycopy(baseArray, 0, testArray, 0, baseArray.length);
 
