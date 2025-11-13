@@ -4,7 +4,7 @@ public class Car {
     private String mark;
 
 
-    public Car(String model, String color, String mark) {
+    public Car(String model, String color, String honda) {
         this.model = model;
         this.color = color;
         this.mark = mark;
